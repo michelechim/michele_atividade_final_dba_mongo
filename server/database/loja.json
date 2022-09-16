@@ -1,0 +1,191 @@
+[
+  {
+    "descricao": "Samsung A5 2017 2GB Exynos 8Core",
+    "id_prod": 111,
+    "importado": false,
+    "nome": "Samsumg A5 - 2017",
+    "preco": 4500,
+    "qtd_estoque": 2
+  },
+  {
+    "descricao": "I5 7600HQ 8GBMen GTX1030m SSD 1TB",
+    "id_prod": 112,
+    "importado": false,
+    "nome": "Notebook DELL Inspiron 15",
+    "preco": 8500,
+    "qtd_estoque": 300
+  },
+  {
+    "descricao": "I7 10800HQ 16GB MEM NVIDIA-RTX2060m SSD 2TB",
+    "id_prod": 113,
+    "importado": false,
+    "nome": "Notebook Samsumg Gamer",
+    "preco": 17500,
+    "qtd_estoque": 150
+  },
+  {
+    "descricao": "SSD SAMSUNG EVO 860 4TB",
+    "id_prod": 114,
+    "importado": false,
+    "nome": "SSD 4TB",
+    "preco": 6350,
+    "qtd_estoque": 200
+  },
+  {
+    "descricao": "SSD SAMSUNG EVO 860 2TB",
+    "id_prod": 115,
+    "importado": false,
+    "nome": "SSD 2TB",
+    "preco": 3750,
+    "qtd_estoque": 150
+  },
+  {
+    "descricao": "SSD WESTERN DIGITAL",
+    "id_prod": 121,
+    "importado": false,
+    "nome": "SSD 4TB",
+    "preco": 4150,
+    "qtd_estoque": 20
+  },
+  {
+    "descricao": "GPU NVIDIA 12GB MEM GDDR6 256BITS GAINWARD PHOENIX ",
+    "id_prod": 122,
+    "importado": false,
+    "nome": "GAINWARD PHOENIX RTX3080ti",
+    "preco": 14150,
+    "qtd_estoque": 30
+  },
+  {
+    "descricao": "GPU NVIDIA 8GB MEM GDDR6 256BITS GAINWARD PHOENIX ",
+    "id_prod": 123,
+    "importado": false,
+    "nome": "GAINWARD PHOENIX RTX3070",
+    "preco": 7399,
+    "qtd_estoque": 60
+  },
+  {
+    "descricao": "AMAZON ALEX ECHO DOT 3 GEN SMART SPEAKER",
+    "id_prod": 124,
+    "importado": false,
+    "nome": "ECHO DOT ALEXA",
+    "preco": 200,
+    "qtd_estoque": 1000
+  },
+  {
+    "descricao": "LED 35\" 3440x1440 Preto 1 HDMI(v1.4)",
+    "id_prod": 125,
+    "importado": false,
+    "nome": "Monitor Asus BK 35''",
+    "preco": 9990,
+    "qtd_estoque": 500
+  },
+  {
+    "id_prod": 130,
+    "nome": "SmartWatch Samsumg 5G 4GB",
+    "descricao": "SmartWatch Samsumg MEM 4GB Processador Exynos Ultimate",
+    "importado": true,
+    "preco": 17450,
+    "qtd_estoque": 150
+  },
+  {
+    "id_prod": 130,
+    "nome": "TV LG 5G 8K",
+    "descricao": "SmartTV LG 8K Model LG20228k5g",
+    "importado": true,
+    "preco": 14450,
+    "qtd_estoque": 300
+  },
+  {
+    "id_prod": 132,
+    "nome": "SmartTV LG 8K 5G 50\"",
+    "descricao": "SmartTV LG model LG5020228K5G",
+    "importado": true,
+    "preco": 18500,
+    "qtd_estoque": 150
+  },
+  {
+    "id_prod": 133,
+    "nome": "SmartTV LG 8K 5G 60\"",
+    "descricao": "SmartTV LG model LG6020228K5G",
+    "importado": true,
+    "preco": 20500,
+    "qtd_estoque": 150
+  },
+  {
+    "id_prod": 134,
+    "nome": "SmartTV LG 8K 5G 70\"",
+    "descricao": "SmartTV LG model LG7020228K5G",
+    "importado": true,
+    "preco": 23500,
+    "qtd_estoque": 150
+  },
+  {
+    "id_prod": 135,
+    "nome": "SmartTV SAMSUMG 8K 5G 45\"",
+    "descricao": "SmartTV SAMSUMG model SM4520228K5G",
+    "importado": true,
+    "preco": 12500,
+    "qtd_estoque": 150
+  },
+  {
+    "id_prod": 136,
+    "nome": " AMD Radeon RX 6600 ",
+    "descricao": "XFX Speedster SWFT 210 AMD Core Gaming, 8GB GDDR6,RDNA 2 ",
+    "importado": true,
+    "preco": 3500,
+    "qtd_estoque": 150
+  },
+  {
+    "id_prod": 137,
+    "nome": "Smartphone Motorola Moto Edge 30 Pro,",
+    "descricao": "Moto Edge 5G, 12GB RAM, 256GB, Câmera Tripla 50MP, Tela Max Vision 6.7, Branco",
+    "importado": true,
+    "preco": 5800,
+    "qtd_estoque": 150
+  },
+  {
+    "id_prod": 139,
+    "nome": "Cadeira Gamer Husky Gaming Hailstorm Blue",
+    "descricao": "Cadeira Gamer Husky Gaming Hailstorm, Preto e Azul, Com Almofadas, Reclinável, Descanso de Braço 2D - HHA-BB",
+    "qtd_estoque": 250,
+    "preco": 1249.9,
+    "importado": false,
+    "desconto": 20
+  },
+  {
+    "id_prod": 140,
+    "nome": "Cadeira Gamer Husky Gaming Hailstorm 900",
+    "descricao": " Preto e Vermelho, Com Almofadas, Reclinável com Sistema Frog, Descanso de Braço 3D - HGMA085",
+    "qtd_estoque": 130,
+    "preco": 1449.9,
+    "importado": false,
+    "desconto": 5
+  },
+  {
+    "id_prod": 141,
+    "nome": "Jogo Ghostwire: Tokyo, PS5",
+    "descricao": "Aproveite essa oportunidade e adquira seu Jogo Ghostwire: Tokyo, PS5 com Ray tracing e áudio 3D.",
+    "qtd_estoque": 210,
+    "preco": 264,
+    "importado": true,
+    "desconto": 15
+  },
+  {
+    "id_prod": 142,
+    "nome": "Computador All In One Positivo Master A1120",
+    "descricao": "Computador All In One Positivo Master A1120, Intel Celeron N 4000, 4GB, 500GB, 21.5´ Full HD, Windows 10 Home - 1702399",
+    "qtd_estoque": 110,
+    "preco": 2599.9,
+    "importado": false,
+    "desconto": 10
+  },
+  {
+    "id_prod": 143,
+    "nome": "Smartphone Asus Zenfone 8 5G",
+    "descricao": "Smartphone Asus Zenfone 8 5G ZS590KS-2A077BR, 8GB RAM, 128GB, Câmera Dupla 64MP, Tela 5.92, Preto - 90AI0061-M00830",
+    "qtd_estoque": 410,
+    "preco": 3799.9,
+    "importado": true,
+    "desconto": 7
+  } 
+]
