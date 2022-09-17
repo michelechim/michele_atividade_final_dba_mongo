@@ -9,8 +9,13 @@ const getAllProdutos = async (orderBy='id_prod', reverse = false) => {
         console.log('getAllProdutos')
         let resultados = []
 
-        //implementar aqui
+        // await collection
+        //     .find({},{
+        //        sort:{id_prod:1},
+        //     }).toArray()
         
+        //implementar aqui
+
         return resultados;
     } catch (error) {
         console.log(error)
@@ -23,7 +28,13 @@ const getProdutoById = async (id_prod) => {
     try {
         let produto = {}
         
-        //implementar aqui
+        //await collection
+        //     .find(
+        //         {id_prod:{$eq:'id_prod'}},
+        //         {sort:{id_prod:1}})
+        //     .toArray()
+
+            //implementar aqui
         
         return produto;
     } catch (error) {
@@ -38,6 +49,8 @@ const getProdutoById = async (id_prod) => {
 const insertProduto = async (produto) => {
     try {
         console.log(produto)
+        let produto = {}
+
         //implementar aqui
         
         return true 
