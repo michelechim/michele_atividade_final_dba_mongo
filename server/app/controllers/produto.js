@@ -8,7 +8,7 @@ const index = async (req, res) => {
         let reverse = req.query.reverse ? true : false
         listProds = await model.getAllProdutos(orderBy, reverse);
     } else if (req.query.field && req.query.search) {
-        listProds = await model.getFiltredProdutos(req.query.field, req.query.search);
+        listProds = await model.getFilteredProdutos(req.query.field, req.query.search);
     } else {
         listProds = await model.getAllProdutos();
     }

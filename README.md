@@ -47,7 +47,7 @@ npm run win-dev
 ```http
   GET /produtos
 ```
-Obs: resultados ornedados pelo identificador padrão do banco de dados, gerados automaticamente no registro dos mesmos. O campo `id_prod` na
+Obs: resultados ornedados pelo identificador padrão do banco de dados, gerados automaticamente no registro dos mesmos.
 
 ### Filtrar produtos ordenados por campo específico
 
