@@ -14,12 +14,18 @@ const collection = client.db(db).collection('produtos')
  */
 const getAllProdutos = async (orderBy = 'id_prod', reverse = false) => {
     try {
-        console.log('getAllProdutos')
-        let resultados = []
-
-        // await collection('produtos')
-        // .find({},{sort: {orderBy: 1}})
-        // .toArray()
+        //console.log(reverse)
+        //console.log('getAllProdutos')
+        let cod ;
+        if (reverse == true){
+            cod = -1;
+        }else{ // reverse == false
+            cod = 1;
+        }
+        let resultados = await collection
+        .find({},
+            {sort: {[orderBy]: cod}})
+        .toArray()
         
         //implementar aqui
 
@@ -39,11 +45,8 @@ const getAllProdutos = async (orderBy = 'id_prod', reverse = false) => {
  */
 const getProdutoById = async (id_prod) => {
     try {
-        let produto = {}
-
-        // await collection('produtos')
-        // .find({},{$eq:id_prod})
-        // .toArray()
+        let filter = {id_prod:Number(id_prod)}
+        let produto = await collection.find(filter).toArray()
 
         //implementar aqui
 
@@ -66,20 +69,11 @@ const getProdutoById = async (id_prod) => {
  */
 const insertProduto = async (produto) => {
     try {
-        console.log(produto)
-        
-        // const result= {
-        // 	id_prod: 500,
-        // 	nome: "Novo Produto Teste",
-        //     descricao:"Testando inserção de novo produto",
-        //     qtd_estoque: 10,
-        //     preco: 17.50,
-        // }
-        // const produto = await collection('produtos')
-        //     .insertOne(produto)
-    
-        //implementar aqui
+        let inserir = await client.db('loja')
+            .collection('produtos')
+            .insertOne(produto)
 
+        //implementar aqui
         return true
     } catch (error) {
         console.log(error)
@@ -99,17 +93,15 @@ const insertProduto = async (produto) => {
  */
 const updateProduto = async (new_produto) => {
     try {
-        // const filter = {id_prod:111};
-        // const new_produto = {
-        //     preco: 5500
-        // }
-        // await collection('produtos')
-        //     .updated(filter,{$set:new_produto});
+
+        let id = Number(new_produto.id_prod);
+        let filter = { id_prod:id};
+
+        let updated = await client.db('loja').collection('produtos')
+            .updateOne(filter, {$set:new_produto});
 
         //implementar aqui
-
-        let updated
-        if (updated) return true
+        if (updated.modifiedCount) return true
         else throw new Error('DAO: Erro ao atualizar produto!')
     } catch (error) {
         console.log(error)
@@ -128,11 +120,10 @@ const updateProduto = async (new_produto) => {
  */
 const deleteProduto = async (id_prod) => {
     try {
-        // const filter = {id_prod:{$in:[205]}};
-        // await collection('produtos').deleted(filter);
-
+        let filter = {id_prod:Number(id_prod)}
+        let deleted = await collection.deleteOne(filter)
+       
         //implementar aqui
-
         return deleted //boolean
     } catch (error) {
         console.log(error)
@@ -150,12 +141,11 @@ const deleteProduto = async (id_prod) => {
  */
 const deleteManyProdutos = async (ids) => {
     try {
-        // const ids = {$in:[206,207]};
-        // await collection('produtos').deltedAll(ids);
+        let filter = {id_prod:{$in:ids}};
+        let deletedAll = await collection.deleteMany(filter);
 
-        //implementar aqui
-
-        return deltedAll //boolean
+        //implementar aqui      
+        return deletedAll //boolean
     } catch (error) {
         console.log(error)
         return false;
@@ -173,13 +163,17 @@ const deleteManyProdutos = async (ids) => {
  */
 const getFilteredProdutos = async (field = 'nome', term = '') => {
     try {
-        let resultados = []
-
+        let resultados = [];
         console.log({ field, term })
         await changeIndexes(field) //troca de indices
-
         //implementar aqui
 
+        const filter = {
+            $text:{
+                $search: term,
+            }
+        }
+        resultados = await collection.find(filter).toArray(); 
         return resultados;
     } catch (error) {
         console.log(error)
@@ -199,6 +193,17 @@ const getProdutosPriceRange = async (greater = 0, less = 0, sort = 1) => {
     try {
         let resultados = []
 
+        let cod;
+        if(sort == true){ cod = -1
+        }else{ cod =  1;}
+
+        resultados = await collection.find({
+            preco: {$gt: greater},
+            preco: {$lt: less},
+        },{
+            sort: {preco: cod}
+        }).toArray();
+
         //implementar aqui
 
         return resultados;
@@ -217,7 +222,7 @@ const changeIndexes = async (field) => {
     if (!indexName || indexName !== field + '_text'){
         if(indexName)
             await collection.dropIndex(indexName)
-        collection.createIndex({[field]:'text'})
+            await collection.createIndex({[field]:'text'})
     }
 }
 
