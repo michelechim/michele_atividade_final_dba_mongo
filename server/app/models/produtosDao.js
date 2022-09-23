@@ -14,6 +14,7 @@ const collection = client.db(db).collection('produtos')
  */
 const getAllProdutos = async (orderBy = 'id_prod', reverse = false) => {
     try {
+        let resultados = []
         //console.log(reverse)
         //console.log('getAllProdutos')
         let cod ;
@@ -22,7 +23,7 @@ const getAllProdutos = async (orderBy = 'id_prod', reverse = false) => {
         }else{ // reverse == false
             cod = 1;
         }
-        let resultados = await collection
+        resultados = await collection
         .find({},
             {sort: {[orderBy]: cod}})
         .toArray()
@@ -194,16 +195,18 @@ const getProdutosPriceRange = async (greater = 0, less = 0, sort = 1) => {
         let resultados = []
 
         let cod;
-        if(sort == true){ cod = -1
-        }else{ cod =  1;}
+        if(sort == true){ cod = -1 }
+            else{ cod =  1; }
 
-        resultados = await collection.find({
-            preco: {$gt: greater},
-            preco: {$lt: less},
-        },{
-            sort: {preco: cod}
-        }).toArray();
+        let filter = {
+            $and: [
+                {preco: {$gte: greater}},
+                {preco: {$lte: less}},
+            ]
+        }
+        let opcoes = { sort: {cod}, }
 
+        resultados = await collection.find(filter, opcoes).toArray();
         //implementar aqui
 
         return resultados;
